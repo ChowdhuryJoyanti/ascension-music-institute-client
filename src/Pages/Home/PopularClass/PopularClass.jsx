@@ -17,7 +17,7 @@ const PopularClass = () => {
     return (
         <section>
             <SectionTitle
-                heading="Our Class"
+                heading="Our Top Class"
                 subHeading="Popular Class"
             
             ></SectionTitle>

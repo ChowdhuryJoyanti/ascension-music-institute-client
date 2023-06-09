@@ -6,9 +6,10 @@ const ClassItem = ({ clas }) => {
     return (
         <div className='border rounded-lg'>
             <img className=' class-image ' src={image} alt="" />
-            <div className='text-center text-3x text-amber-800'>
+            <div className='text-center text-xl text-white mt-5 mb-4'>
                 <h3> Instrument Name:{instrumentName}</h3>
                 <p> Price:{price}</p>
+                <button className="btn btn-warning mt-2">View Details</button>
             </div>
 
         </div>
