@@ -8,12 +8,15 @@ import banner4 from '../../../assets/banner/banner8.jpg';
 import banner5 from '../../../assets/banner/banner9.jpg';
 import banner6 from '../../../assets/banner/banner1.jpg';
 
+
 const Banner = () => {
+
     return (
         <div>
               <Carousel>
                 <div>
                     <img src={banner1} />
+                <p>hi</p>
                     
                 </div>
                 <div>
@@ -38,6 +41,9 @@ const Banner = () => {
                 </div>
               
             </Carousel>
+
+
+
         </div>
     );
 };

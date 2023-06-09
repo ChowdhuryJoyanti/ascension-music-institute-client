@@ -1,0 +1,122 @@
+[
+  
+      {
+        "id": 1,
+        "name": "Beginner's Music Class",
+        "image": "../src/assets/insturment/ins1.jpg",
+        "instructor": {
+          "id": 1,
+          "name": "John Doe",
+          "image": "../src/assets/intructor/ins00.jpg",
+          "email": "johndoe@example.com",
+          "subject": "Music Theory"
+        }
+       
+      },
+      {
+        "id": 2,
+        "name": "Intermediate Music Class",
+        "image": "../src/assets/insturment/inst11.jpg",
+        "instructor": {
+          "id": 2,
+          "name": "Jane Smith",
+          "image": "../src/assets/intructor/ins2.jpg",
+          "email": "janesmith@example.com",
+          "subject": "Piano"
+        }
+   
+      },
+      {
+        "id": 3,
+        "name": "Advanced Music Class",
+        "image": "../src/assets/insturment/inst123.jpg",
+        "instructor": {
+          "id": 3,
+          "name": "Michael Johnson",
+          "image": "../src/assets/intructor/ins3.jpg",
+          "email": "michaeljohnson@example.com",
+          "subject": "Guitar"
+        }
+     
+      },
+      {
+        "id": 4,
+        "name": "Piano Workshop",
+        "image": "../src/assets/insturment/inst17.jpgg",
+        "instructor": {
+          "id": 4,
+          "name": "Emily Davis",
+          "image": "../src/assets/intructor/ins4.jpg",
+          "email": "emilydavis@example.com",
+          "subject": "Piano"
+        }
+
+      },
+      {
+        "id": 5,
+        "name": "Guitar Basics",
+        "image": "../src/assets/insturment/inst3.jpg",
+        "instructor": {
+          "id": 5,
+          "name": "Andrew Wilson",
+          "image": "../src/assets/intructor/ins8.jpg",
+          "email": "andrewwilson@example.com",
+          "subject": "Guitar"
+        }
+       
+      },
+      {
+        "id": 6,
+        "name": "Vocal Training",
+        "image": "../src/assets/insturment/inst4.jpg",
+        "instructor": {
+          "id": 6,
+          "name": "Jessica Thompson",
+          "image": "../src/assets/intructor/ins9.jpg",
+          "email": "jessicathompson@example.com",
+          "subject": "Vocals"
+        }
+       
+      },
+      {
+        "id": 7,
+        "name": "Drumming Masterclass",
+        "image": "../src/assets/insturment/inst6.jpg",
+        "instructor": {
+          "id": 7,
+          "name": "David Brown",
+          "image": "../src/assets/intructor/instructor.jpg",
+          "email": "davidbrown@example.com",
+          "subject": "Drums"
+        }
+   
+      },
+      {
+        "id": 8,
+        "name": "Songwriting Workshop",
+        "image": "../src/assets/insturment/instr.jpg",
+        "instructor": {
+          "id": 8,
+          "name": "Sarah Johnson",
+          "image": "../src/assets/intructor/inst9.jpg",
+          "email": "sarahjohnson@example.com",
+          "subject": "Songwriting"
+        }
+        
+      },
+      {
+        "id": 9,
+        "name": "Music Theory Essentials",
+        "image": "../src/assets/insturment/sebastian-mark-uRJPQIpCwTg-unsplash.jpg",
+        "instructor": {
+          "id": 9,
+          "name": "Matthew Davis",
+          "image": "../src/assets/intructor/ins00.jpg",
+          "email":"matthew@gmail.com",
+          "subject": "Music Theory and Analysis"
+
+        }
+    }
+]
+
+  
