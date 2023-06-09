@@ -1,0 +1,106 @@
+[
+  
+      {
+      
+          "_id": 1,
+          "instructorName": "John Doe",
+          "image": "../src/assets/intructor/ins00.jpg",
+          "email": "johndoe@example.com",
+          "subject": "Music Theory",
+          "category":"popular"
+      
+       
+      },
+     
+      {
+        "_id": 2,
+        "instructorName": "Jane Smith",
+        "image": "../src/assets/intructor/ins2.jpg",
+        "email": "janesmith@example.com",
+        "subject": "Piano",
+        "category":"popular"
+      
+ 
+    },
+      {
+       
+        "_id": 3,
+          "instructorName": "Michael Johnson",
+          "image": "../src/assets/intructor/ins3.jpg",
+          "email": "michaeljohnson@example.com",
+          "subject": "Guitar",
+          "category":"popular"
+        
+    
+      },
+      {
+       
+        "_id": 4,
+          "instructorName": "Emily Davis",
+          "image": "../src/assets/intructor/ins4.jpg",
+          "email": "emilydavis@example.com",
+          "subject": "Piano",
+          "category":"popular"
+        
+
+      },
+      {
+        
+       
+        "_id": 5,
+          "instructorName": "Andrew Wilson",
+          "image": "../src/assets/intructor/ins8.jpg",
+          "email": "andrewwilson@example.com",
+          "subject": "Guitar",
+          "category":"popular"
+        
+       
+      },
+      {
+       
+     
+        "_id": 6,
+          "instructorName": "Jessica Thompson",
+          "image": "../src/assets/intructor/ins9.jpg",
+          "email": "jessicathompson@example.com",
+          "subject": "Vocals"
+        
+       
+      },
+      {
+       
+       
+        "_id": 7,
+          "instructorName": "David Brown",
+          "image": "../src/assets/intructor/instructor.jpg",
+          "email": "davidbrown@example.com",
+          "subject": "Drums",
+          "category":"popular"
+        
+   
+      },
+      {
+       
+       
+        "_id": 8,
+          "instructorName": "Sarah Johnson",
+          "image": "../src/assets/intructor/inst9.jpg",
+          "email": "sarahjohnson@example.com",
+          "subject": "Songwriting"
+        
+      
+      },
+      {
+       
+       
+        "_id": 9,
+          "instructorName": "Matthew Davis",
+          "image": "../src/assets/intructor/ins00.jpg",
+          "email":"matthew@gmail.com",
+          "subject": "Music Theory and Analysis"
+
+        
+    }
+]
+
+  
