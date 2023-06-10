@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../../Components/SectionTitle';
-import ClassItem from '../../Shared/ClassItem/ClassItem';
+import ClassItem from '../ClassItem/ClassItem';
+
 
 const PopularClass = () => {
     const [popularClass, setPopularClass] = useState([]);
@@ -23,7 +24,7 @@ const PopularClass = () => {
             ></SectionTitle>
             <div className='grid md:grid-cols-3 lg:grid-cols-3 border rounded-lg'>
                 {
-                   popularClass.map(clas => <ClassItem  
+                   popularClass.map(clas => <ClassItem
                     key={clas._id}
                     clas={clas}
                     

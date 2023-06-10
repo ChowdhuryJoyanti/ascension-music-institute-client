@@ -6,22 +6,14 @@ const NavBar = () => {
     const navOptions =
         <>
         <NavLink></NavLink>
-          <li> <NavLink>Home</NavLink></li>
-          <li> <NavLink>Popular Class</NavLink></li>
-          <li> <NavLink>Log In</NavLink></li>
-          <li> <NavLink>Home</NavLink></li>
-          <li><a>Popular Class</a></li>
-          <li><a>Home</a></li>
-                        <li tabIndex={0}>
-                            {/* <details>
-                                <summary>Parent</summary>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </details> */}
-                        </li>
-                        <li><a>Item 3</a></li>
+          <li> <NavLink to="/">Home</NavLink></li>
+          <li> <NavLink to="/allclasses">All Classes</NavLink></li>
+          <li> <NavLink to="/allinstructors">All Instructors</NavLink></li>
+          <li> <NavLink to="/login">Log In</NavLink></li>
+          <li> <NavLink to="/contact">Contact</NavLink></li>
+  
+     
+                    
         </>
   
 

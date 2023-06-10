@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     
-      <h1>Ascension Music Institute</h1>
+      <h1></h1>
      
 
     </>
