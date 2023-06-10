@@ -22,6 +22,7 @@
       
  
     },
+
       {
        
         "_id": 3,
@@ -100,7 +101,40 @@
           "subject": "Music Theory and Analysis"
 
         
-    }
+    },
+    {
+      "_id": 10,
+      "instructorName": "Jane Smith",
+      "image": "../src/assets/intructor/ins2.jpg",
+      "email": "janesmith@example.com",
+      "subject": "Piano",
+      "category":""
+    
+
+  },
+  {
+       
+       
+    "_id": 11,
+      "instructorName": "David Brown",
+      "image": "../src/assets/intructor/instructor.jpg",
+      "email": "davidbrown@example.com",
+      "subject": "Drums",
+      "category":""
+    
+
+  },
+  {
+       
+    "_id": 3,
+      "instructorName": "Michael Johnson",
+      "image": "../src/assets/intructor/ins3.jpg",
+      "email": "michaeljohnson@example.com",
+      "subject": "Guitar",
+      "category":""
+    
+
+  }
 ]
 
   

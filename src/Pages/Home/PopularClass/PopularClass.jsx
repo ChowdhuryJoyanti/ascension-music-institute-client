@@ -2,19 +2,23 @@
 import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../../Components/SectionTitle';
 import ClassItem from '../ClassItem/ClassItem';
+import useClass from '../../../Hooks/useClass';
 
 
 const PopularClass = () => {
-    const [popularClass, setPopularClass] = useState([]);
+    const [popularClass] = useClass();
+    const popular = popularClass.filter(item => item.category === 'popular');
+    // const [popularClass, setPopularClass] = useState([]);
 
-    useEffect(() =>{
-        fetch('popularClass.json')
-        .then(res => res.json())
-        .then(data => {
-            const popularClasses = data.filter(item=>item.category === 'popular')
-            console.log(popularClass);
-             setPopularClass(popularClasses)})
-    },[])
+    // useEffect(() =>{
+    //     fetch('popularClass.json')
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         const popularClasses = data.filter(item=>item.category === 'popular')
+    //         console.log(popularClass);
+    //          setPopularClass(popularClasses)})
+    // },[])
+
     return (
         <section>
             <SectionTitle
@@ -24,7 +28,7 @@ const PopularClass = () => {
             ></SectionTitle>
             <div className='grid md:grid-cols-3 lg:grid-cols-3 border rounded-lg'>
                 {
-                   popularClass.map(clas => <ClassItem
+                   popular.map(clas => <ClassItem
                     key={clas._id}
                     clas={clas}
                     

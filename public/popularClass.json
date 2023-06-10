@@ -11,10 +11,11 @@
         "_id": 2,
         "instrumentName": "piano",
         "image": "../src/assets/insturment/inst11.jpg",
-        "category":"popular",
+        "category":"",
         "price":2000
         
-    },{
+    },
+    {
         "_id": 3,
         "instrumentName":"Drums",
         "image": "../src/assets/insturment/inst123.jpg",
@@ -64,5 +65,35 @@
         "image": "../src/assets/insturment/sebastian-mark-uRJPQIpCwTg-unsplash.jpg",
         "category":"popular",
         "price":4000
+    },
+    {
+        "_id": 10,
+        "instrumentName": "Drumming Masterclass",
+        "image": "../src/assets/insturment/inst6.jpg",
+        "category":"",
+        "price":6000
+    },
+    {
+        "_id": 11,
+        "instrumentName": "Guitar Basics",
+        "image": "../src/assets/insturment/inst3.jpg",
+        "category":"",
+        "price":4000
+    },
+    {
+        "_id": 12,
+        "instrumentName": "piano",
+        "image": "../src/assets/insturment/inst11.jpg",
+        "category":"popular",
+        "price":2000
+        
+    },
+    {
+        "_id": 2,
+        "instrumentName": "piano",
+        "image": "../src/assets/insturment/inst11.jpg",
+        "category":"",
+        "price":2000
+        
     }
 ]
