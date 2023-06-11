@@ -11,6 +11,7 @@ import SingleClass from '../singleClass/SingleClass';
 
 
 
+
 const AllClasses = () => {
     // const [popularClass] = useClass();
 const [allClasses,setAllClasses] = useState([]);
@@ -21,6 +22,7 @@ const [allClasses,setAllClasses] = useState([]);
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            setAllClasses(data);
            
           })
     },[])

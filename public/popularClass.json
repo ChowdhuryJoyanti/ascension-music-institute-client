@@ -4,7 +4,8 @@
         "instrumentName": "Guitar",
         "image": "../src/assets/insturment/ins1.jpg",
         "category":"popular",
-        "price":1000
+        "price":1000,
+        "availableSeats":20
         
     },
     {
@@ -12,7 +13,8 @@
         "instrumentName": "piano",
         "image": "../src/assets/insturment/inst11.jpg",
         "category":"piano",
-        "price":2000
+        "price":2000,
+        "availableSeats":30
         
     },
     {
@@ -20,7 +22,8 @@
         "instrumentName":"Drums",
         "image": "../src/assets/insturment/inst123.jpg",
         "category":"popular",
-        "price":3000
+        "price":3000,
+        "availableSeats":50
         
 
     },
@@ -29,7 +32,8 @@
         "instrumentName": "Piano Workshop",
         "image": "../src/assets/insturment/inst17.jpg",
         "category":"popular",
-        "price":5000
+        "price":5000,   
+        "availableSeats":25
     },
     {
         "_id": 5,
@@ -43,49 +47,57 @@
         "instrumentName": "Vocal Training",
         "image": "../src/assets/insturment/inst4.jpg",
         "category":"popular",
-        "price":3000
+        "price":3000,
+        "availableSeats":40
     },
     {
         "_id": 7,
         "instrumentName": "Drumming Masterclass",
         "image": "../src/assets/insturment/inst6.jpg",
         "category":"popular",
-        "price":6000
+        "price":6000,
+        "availableSeats":20
     },
     {
         "_id": 8,
         "instrumentName": "Songwriting Workshop",
         "image": "../src/assets/insturment/instr.jpg",
         "category":"popular",
-        "price":4000
+        "price":4000,
+        "availableSeats":20
     },
     {
         "_id": 9,
         "instrumentName": "proamphet",
         "image": "../src/assets/insturment/sebastian-mark-uRJPQIpCwTg-unsplash.jpg",
         "category":"popular",
-        "price":4000
+        "price":4000,
+        "availableSeats":26
+
     },
     {
         "_id": 10,
         "instrumentName": "Drumming Masterclass",
         "image": "../src/assets/insturment/inst6.jpg",
         "category":"drum",
-        "price":6000
+        "price":6000,
+        "availableSeats":30
     },
     {
         "_id": 11,
         "instrumentName": "Guitar Basics",
         "image": "../src/assets/insturment/inst3.jpg",
         "category":"guiter",
-        "price":4000
+        "price":4000,
+        "availableSeats":34
     },
     {
         "_id": 12,
         "instrumentName": "piano",
         "image": "../src/assets/insturment/inst11.jpg",
         "category":"popular",
-        "price":2000
+        "price":2000,
+        "availableSeats":43
         
     },
     {
@@ -93,7 +105,8 @@
         "instrumentName": "piano",
         "image": "../src/assets/insturment/inst11.jpg",
         "category":"piano",
-        "price":2000
+        "price":2000,
+        "availableSeats":25
         
     },
     {
@@ -101,20 +114,24 @@
         "instrumentName": "Drumming Masterclass",
         "image": "../src/assets/insturment/inst6.jpg",
         "category":"drum",
-        "price":6000
+        "price":6000,
+        "availableSeats":45
     },
     {
         "_id": 15,
         "instrumentName": "proamphet",
         "image": "../src/assets/insturment/sebastian-mark-uRJPQIpCwTg-unsplash.jpg",
         "category":"proamphet",
-        "price":4000
+        "price":4000,
+        "availableSeats":20
+
     },
     {
         "_id": 16,
         "instrumentName": "Vocal Training",
         "image": "../src/assets/insturment/inst4.jpg",
         "category":"guiter",
-        "price":3000
+        "price":3000,
+        "availableSeats":40
     }
 ]
