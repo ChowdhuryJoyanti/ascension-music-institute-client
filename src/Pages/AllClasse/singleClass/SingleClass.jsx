@@ -29,13 +29,13 @@ const SingleClass = ({ item }) => {
 
             <div className="hero mt-10 bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src={image} className="max-w-sm rounded-lg shadow-2xl h-48 w-96" />
+                    <img src={image} className="max-w-sm rounded-lg shadow-2xl h-60 w-96" />
                     <div>
                         <h1 className="text-5xl font-bold">ClassName:{instrumentName}</h1>
-                        <p>{price}</p>
-                        <p>{availableSeats}</p>
+                        <p className='text-3xl'> Price:${price}</p>
+                        <p className='text-3xl'>Available Seats:{availableSeats}</p>
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn btn-warning text-center ">View Details</button>
+                        <button className="btn btn-warning text-center ">Select</button>
                     </div>
                 </div>
             </div>
