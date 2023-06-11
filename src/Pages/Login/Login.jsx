@@ -118,8 +118,8 @@ const Login = () => {
                                     <h1 className="text-5xl font-bold">Login now!</h1>
                                 </div>
                                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                                    <div className="card-body">
-                                        <form onSubmit={handleLogIn}>
+                                    <form onSubmit={handleLogIn} className="card-body">
+                                        <form >
                                             <div className="form-control">
                                                 <label className="label">
                                                     <span className="label-text">Email</span>
@@ -143,7 +143,7 @@ const Login = () => {
                                             <button onClick={handleGoogleSignIn} className="btn btn-outline mt-5">Google SignIn</button>
                                         </form>
                                         <p>Don't Have an account <Link className='text-yellow-600' to="/register">Register</Link></p>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

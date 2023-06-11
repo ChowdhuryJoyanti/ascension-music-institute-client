@@ -1,7 +1,12 @@
 import React from 'react';
-import  banner from '../../assets/ohters/about-us.png'
+import banner from '../../assets/ohters/about-us.png'
+// import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { useForm} from 'react-hook-form';
 
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+// import { register } from 'react-hook-form';
+import {Link} from 'react-router-dom';
+
+
 
 const Register = () => {
 
@@ -10,25 +15,32 @@ const Register = () => {
 
     // UseTitle('Register')
 
-const handleRegister = event => {
-        event.preventDefault();
-        const form =event.target;
-        const name =form.name.value;
-        const email =form.email.value;
-        const password =form.password.value;
-        const confirmPassword =form.confirmPassword.value;
-        const photo =form.photo.value;
-        console.log(name,email,password,photo,confirmPassword);
+    // const handleRegister = event => {
+
+        const { register, handleSubmit, watch, formState: { errors } } = useForm();
+        const onSubmit = data => console.log(data);
+
+
+        console.log(watch("example"));
+
+        // event.preventDefault();
+        // const form = event.target;
+        // const name = form.name.value;
+        // const email = form.email.value;
+        // const password = form.password.value;
+        // const confirmPassword = form.confirmPassword.value;
+        // const photo = form.photo.value;
+        // console.log(name, email, password, photo, confirmPassword);
 
 
 
-    //  createUser(email,password)
-    //  .then(result =>{
-    //     const user = result.user;
-    //     console.log(user);
-    //  })
-    //  .catch(error => console.log(error))
-}
+        //  createUser(email,password)
+        //  .then(result =>{
+        //     const user = result.user;
+        //     console.log(user);
+        //  })
+        //  .catch(error => console.log(error))
+    // }
 
 
 
@@ -36,7 +48,7 @@ const handleRegister = event => {
 
     return (
         <div>
-             {/* <div className="hero min-h-screen bg-base-200">
+            {/* <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                
                     <div className="text-center lg:text-left">
@@ -93,40 +105,41 @@ const handleRegister = event => {
                                     <h1 className="text-5xl font-bold">Register now!</h1>
                                 </div>
                                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                                    <div className="card-body">
-                                        <form onSubmit={handleRegister}>
+                                    {/* <form onSubmit={handleRegister}className="card-body"> */}
+                                    <form onSubmit={handleSubmit(onSubmit)}className="card-body">
+                                      
                                             <div className="form-control">
                                                 <label className="label">
                                                     <span className="label-text">Name</span>
                                                 </label>
-                                                <input type="text" name='name' placeholder="name" className="input input-bordered"  required/>
+                                                <input type="text" {...register("name")} name='name' placeholder="name" className="input input-bordered" required />
                                             </div>
                                             <div className="form-control">
                                                 <label className="label">
                                                     <span className="label-text">Email</span>
                                                 </label>
-                                                <input type="email" name='email' placeholder="email" className="input input-bordered" required/>
+                                                <input type="email" {...register("email")} name='email' placeholder="email" className="input input-bordered" required />
                                             </div>
                                             <div className="form-control">
                                                 <label className="label">
                                                     <span className="label-text">Password</span>
                                                 </label>
-                                                <input type="text" name='password' placeholder="password" className="input input-bordered" required />
-                                                
+                                                <input type="text" {...register("password")} name='password' placeholder="password" className="input input-bordered" required />
+
                                             </div>
                                             <div className="form-control">
                                                 <label className="label">
                                                     <span className="label-text">Confirm Password</span>
                                                 </label>
-                                                <input type="text" name='ConfirmPassword' placeholder="ConfirmPassword" className="input input-bordered" required />
-                                                
+                                                <input type="text" {...register("confirmPassword")} name='ConfirmPassword' placeholder="ConfirmPassword" className="input input-bordered" required />
+
                                             </div>
 
                                             <div className="form-control">
                                                 <label className="label">
                                                     <span className="label-text">PhotoURL</span>
                                                 </label>
-                                                <input type="text" name='photo' placeholder="PhotoURL" className="input input-bordered" />
+                                                <input type="text" name='photo' {...register("photoURL")} placeholder="PhotoURL" className="input input-bordered" />
                                                 <label className="label">
                                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                                 </label>
@@ -135,9 +148,9 @@ const handleRegister = event => {
 
                                                 <input className="btn btn-warning" type="submit" value="Register" />
                                             </div>
-                                        </form>
+                                        {/* </form> */}
                                         <p> Have an account ?<Link className='text-yellow-600' to="/login">Login</Link></p>
-                                    </div>
+                                        </form>
                                 </div>
                             </div>
                         </div>

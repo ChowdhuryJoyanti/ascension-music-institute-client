@@ -1,5 +1,5 @@
 # Project Name
-crescendo-the-musical-toy
+Ascension Music Institute
 A brief description of my project.
 
 ## Features
@@ -16,7 +16,7 @@ gallery, toys tabs, about us page ,contact page and a footer
 
 
 ## Live site Link:
- - my site:https://rhythmic-melody-studio.web.app/
+ - my site:
 
 ## Usage
 
