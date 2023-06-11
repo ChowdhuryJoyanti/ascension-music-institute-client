@@ -1,21 +1,23 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import logo from '../../../assets/ohters/logo2.jpg'
 
 const NavBar = () => {
 
+    const handleLogOut = () => {
+        // logOut()
+        // .then()
+        // .catch(error => console.log(error))
+    }
     const navOptions =
         <>
-        <NavLink></NavLink>
-          <li> <NavLink to="/">Home</NavLink></li>
-          <li> <NavLink to="/allclasses">All Classes</NavLink></li>
-          <li> <NavLink to="/allinstructors">All Instructors</NavLink></li>
-          <li> <NavLink to="/login">Log In</NavLink></li>
-          <li> <NavLink to="/contact">Contact</NavLink></li>
-  
-     
-                    
+            <li> <NavLink to="/">Home</NavLink></li>
+            <li> <NavLink to="/classes">Classes</NavLink></li>
+            <li> <NavLink to="/instructors">Instructors</NavLink></li>
+            <li> <NavLink to="/dashboard">Dashboard</NavLink></li>
+            <li> <NavLink to="/login">Log In</NavLink></li>
         </>
-  
+
 
 
 
@@ -28,9 +30,10 @@ const NavBar = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                           {navOptions}
+                            {navOptions}
                         </ul>
                     </div>
+                    <img className='w-20 h-10 rounded border' src={logo} alt="" />
                     <a className="btn btn-ghost normal-case text-xl">Ascension Music Institute</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -39,7 +42,22 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <a className="btn">Login</a>
+
+
+                    {/* {user &&
+                        <img className="w-10 h-10 rounded-full" src={pImage} />
+                    }
+
+                    {user ?
+                        //  <a className="btn">Log in</a>
+                        <button onClick={handleLogOut} className="btn btn-active" href="/login">Logout</button> :
+                        <Link to="/login">
+                            <button className="btn btn-active" href="/login">Login</button>
+
+                        </Link>
+                    } */}
+
                 </div>
             </div>
         </div>
