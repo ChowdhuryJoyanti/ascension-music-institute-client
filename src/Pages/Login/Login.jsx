@@ -4,6 +4,7 @@ import logImg from '../../assets/ohters/OIP.jpeg'
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
@@ -13,15 +14,15 @@ const Login = () => {
     // const auth = getAuth(app);
     // const [users,setUsers]  = useState()
     // const [error,setError] = useState('');
-  
 
 
 
 
-    const {signIn,user} = useContext(AuthContext);
-    const navigate  = useNavigate()
+
+    const { signIn, user } = useContext(AuthContext);
+    const navigate = useNavigate()
     const location = useLocation();
-    console.log('login',location);
+    console.log('login', location);
     // UseTitle('Login')
     const from = location?.state?.from?.pathname || '/';
 
@@ -38,19 +39,19 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        if(!password === password){
+        if (!password === password) {
             setError('password did not matched')
             return setError();
-      }
+        }
 
         console.log(email, password,);
-        signIn(email,password)
-        .then(result =>{
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            navigate(from,{replace:true})
-        })
-        .catch(error => console.log(error));
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true })
+            })
+            .catch(error => console.log(error));
     }
 
 
@@ -67,7 +68,7 @@ const Login = () => {
         //   .catch(error =>{
         //     console.log('error',error.message);
         //   })
-      }
+    }
 
     return (
         <div>
@@ -104,7 +105,9 @@ const Login = () => {
             </div> */}
 
 
-
+            <Helmet>
+                <title>Ascension Music Institute | Login</title>
+            </Helmet>
 
 
             <div className="hero min-h-screen" style={{ backgroundImage: `url('../../../src/assets/banner4.jpg')` }}>

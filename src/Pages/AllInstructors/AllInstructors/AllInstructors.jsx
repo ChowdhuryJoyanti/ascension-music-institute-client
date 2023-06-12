@@ -24,7 +24,7 @@ const AllInstructors = () => {
         <div>
 
             <Helmet>
-                <title>Ascension Music Institute | AllClasses</title>
+                <title>Ascension Music Institute | AllInstructors</title>
             </Helmet>
             <CoverBanner img={classImg} title={'Our All Instructors'}></CoverBanner>
             <div className='grid md:grid-cols-3 lg:grid-cols-3 rounded-lg'>

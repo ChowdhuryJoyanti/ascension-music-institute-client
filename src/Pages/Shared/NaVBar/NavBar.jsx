@@ -1,13 +1,20 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/ohters/logo2.jpg'
+import { useContext } from 'react';
+import { AuthContext } from '../../../Providers/AuthProvider';
+import pImage from '../../../assets/ohters/user-2.png'
 
 const NavBar = () => {
+ 
+    const {user,logOut} = useContext(AuthContext);
+
+
 
     const handleLogOut = () => {
-        // logOut()
-        // .then()
-        // .catch(error => console.log(error))
+        logOut()
+        .then()
+        .catch(error => console.log(error))
     }
     const navOptions =
         <>
@@ -16,6 +23,19 @@ const NavBar = () => {
             <li> <NavLink to="/instructors">Instructors</NavLink></li>
             <li> <NavLink to="/dashboard">Dashboard</NavLink></li>
             <li> <NavLink to="/login">Log In</NavLink></li>
+
+            {
+ 
+                user ? <>
+                  <button onClick={handleLogOut} className="btn btn-active" href="/login">Logout</button> :
+                
+                </>:<> 
+                
+                <li> <NavLink to="/login">Log In</NavLink></li>
+                
+                </>
+          
+            }
         </>
 
 
@@ -41,24 +61,24 @@ const NavBar = () => {
                         {navOptions}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                {/* <div className="navbar-end">
                     <a className="btn">Login</a>
 
 
-                    {/* {user &&
+                    {user &&
                         <img className="w-10 h-10 rounded-full" src={pImage} />
                     }
 
                     {user ?
-                        //  <a className="btn">Log in</a>
+                         <a className="btn">Log in</a>
                         <button onClick={handleLogOut} className="btn btn-active" href="/login">Logout</button> :
                         <Link to="/login">
                             <button className="btn btn-active" href="/login">Login</button>
 
                         </Link>
-                    } */}
+                    }
 
-                </div>
+                </div> */}
             </div>
         </div>
     );
