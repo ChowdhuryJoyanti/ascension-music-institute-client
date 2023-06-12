@@ -4,10 +4,11 @@ import banner from '../../assets/ohters/about-us.png'
 import { useForm } from 'react-hook-form';
 
 // import { register } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useContext } from 'react';
 import { AuthContext } from './../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 
@@ -20,10 +21,10 @@ const Register = () => {
 
     // const handleRegister = event => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset ,formState: { errors } } = useForm();
 
-    const { createUser } = useContext(AuthContext);
-
+    const { createUser,updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const onSubmit = data => {
 
@@ -33,6 +34,23 @@ const Register = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
+            updateUserProfile(data.name, data.photoURL)
+            .then(() => {
+                    
+                console.log('user Profile info updated');
+                reset();
+                Swal.fire({
+                    title: 'User has been created successfully',
+                    showClass: {
+                      popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate__animated animate__fadeOutUp'
+                    }
+                  })
+                  navigate('/')
+            })
+            .catch(error => console.log(error))
 
         })
 
@@ -162,13 +180,6 @@ const Register = () => {
                                                 {errors.password?.type === 'maxLength' && <p className='text-red-500'>password can not be more then 20 character</p>}
                                                 {errors.password?.type === 'pattern' && <p className='text-red-500'>password must have one upper case ,one lower case ,one number and a special character is required</p>}
                                             </div>
-
-
-
-
-
-
-
 {/* 
                                         <div className="form-control">
                                             <label className="label">
@@ -191,16 +202,12 @@ const Register = () => {
 
 
 
-
-
-
-
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text">Confirm Password</span>
                                             </label>
                                             <input type="text" {...register("confirmPassword", { required: true })}  placeholder="ConfirmPassword" className="input input-bordered" />
-
+                                            {errors.confirmPassword && <span className='text-red-500'>Confirm Password is required</span>}
                                         </div>
 
                                         <div className="form-control">
@@ -208,6 +215,7 @@ const Register = () => {
                                                 <span className="label-text">PhotoURL</span>
                                             </label>
                                             <input type="text" {...register("photoURL")} placeholder="PhotoURL" className="input input-bordered" />
+                                            {errors.photoURL && <span className='text-red-500'>Photo Url is required</span>}
                                             <label className="label">
                                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                             </label>

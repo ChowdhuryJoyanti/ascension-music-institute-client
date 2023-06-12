@@ -25,6 +25,8 @@ const NavBar = () => {
             {
  
                 user ? <>
+                <span>{user?.displayName}</span>
+                <img  className="h-[50px] w-[50px] rounded-xl p-2" src={user?.photoURL} alt="" />
                   <button onClick={handleLogOut} className="btn btn-active" href="/login">Logout</button> 
                 
                 </>:<> 
