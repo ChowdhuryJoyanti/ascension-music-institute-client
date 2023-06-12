@@ -4,15 +4,17 @@ import logo from '../../../assets/ohters/logo2.jpg'
 import { useContext } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import pImage from '../../../assets/ohters/user-2.png'
+import { FaShoppingCart } from 'react-icons/fa';
+
 
 const NavBar = () => {
- 
-    const {user,logOut} = useContext(AuthContext);
+
+    const { user, logOut } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
-        .then()
-        .catch(error => console.log(error))
+            .then()
+            .catch(error => console.log(error))
     }
     const navOptions =
         <>
@@ -20,21 +22,32 @@ const NavBar = () => {
             <li> <NavLink to="/classes">Classes</NavLink></li>
             <li> <NavLink to="/instructors">Instructors</NavLink></li>
             <li> <NavLink to="/dashboard">Dashboard</NavLink></li>
-            {/* <li> <NavLink to="/login">Log In</NavLink></li> */}
+            <li>
+                <NavLink to="/">
+                    <button className="btn">
+                 <FaShoppingCart></FaShoppingCart>
+                        <div className="badge">+0</div>
+                    </button>
+                   
+                </NavLink>
+
+
+            </li>
+
 
             {
- 
+
                 user ? <>
-                <span>{user?.displayName}</span>
-                <img  className="h-[50px] w-[50px] rounded-xl p-2" src={user?.photoURL} alt="" />
-                  <button onClick={handleLogOut} className="btn btn-active" href="/login">Logout</button> 
-                
-                </>:<> 
-                
-                <li> <NavLink to="/login">Log In</NavLink></li>
-                
+                    <span>{user?.displayName}</span>
+                    <img className="h-[50px] w-[50px] rounded-xl p-2" src={user?.photoURL} alt="" />
+                    <button onClick={handleLogOut} className="btn btn-active" href="/login">Logout</button>
+
+                </> : <>
+
+                    <li> <NavLink to="/login">Log In</NavLink></li>
+
                 </>
-          
+
             }
         </>
 

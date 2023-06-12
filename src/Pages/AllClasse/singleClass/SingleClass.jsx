@@ -19,6 +19,9 @@ import { Grid, Pagination } from "swiper";
 
 const SingleClass = ({ item }) => {
     const { instrumentName, image, price, availableSeats } = item;
+    const handleSelect = item => {
+        console.log(item);
+    }
     return (
         <div>
 
@@ -35,7 +38,7 @@ const SingleClass = ({ item }) => {
                         <p className='text-3xl'> Price:${price}</p>
                         <p className='text-3xl'>Available Seats:{availableSeats}</p>
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn btn-warning text-center ">Select</button>
+                        <button onClick={()=>handleSelect(item)} className="btn btn-warning text-center ">Select</button>
                     </div>
                 </div>
             </div>
