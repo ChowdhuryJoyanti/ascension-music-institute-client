@@ -5,6 +5,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
@@ -49,6 +50,23 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+
+
+                Swal.fire({
+                    title: 'User Log In Successfully',
+                    showClass: {
+                      popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate__animated animate__fadeOutUp'
+                    }
+                  })
+
+
+
+
+
+
                 navigate(from, { replace: true })
             })
             .catch(error => console.log(error));
@@ -122,7 +140,7 @@ const Login = () => {
                                 </div>
                                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                                     <form onSubmit={handleLogIn} className="card-body">
-                                        <form >
+                                        {/* <form > */}
                                             <div className="form-control">
                                                 <label className="label">
                                                     <span className="label-text">Email</span>
@@ -146,7 +164,7 @@ const Login = () => {
                                             <button onClick={handleGoogleSignIn} className="btn btn-outline mt-5">Google SignIn</button>
                                         </form>
                                         <p>Don't Have an account <Link className='text-yellow-600' to="/register">Register</Link></p>
-                                    </form>
+                                    {/* </form> */}
                                 </div>
                             </div>
                         </div>

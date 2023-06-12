@@ -9,8 +9,6 @@ const NavBar = () => {
  
     const {user,logOut} = useContext(AuthContext);
 
-
-
     const handleLogOut = () => {
         logOut()
         .then()
@@ -22,12 +20,12 @@ const NavBar = () => {
             <li> <NavLink to="/classes">Classes</NavLink></li>
             <li> <NavLink to="/instructors">Instructors</NavLink></li>
             <li> <NavLink to="/dashboard">Dashboard</NavLink></li>
-            <li> <NavLink to="/login">Log In</NavLink></li>
+            {/* <li> <NavLink to="/login">Log In</NavLink></li> */}
 
             {
  
                 user ? <>
-                  <button onClick={handleLogOut} className="btn btn-active" href="/login">Logout</button> :
+                  <button onClick={handleLogOut} className="btn btn-active" href="/login">Logout</button> 
                 
                 </>:<> 
                 
