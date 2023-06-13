@@ -25,7 +25,7 @@ const NavBar = () => {
             <li> <NavLink to="/instructors">Instructors</NavLink></li>
             <li> <NavLink to="/dashboard">Dashboard</NavLink></li>
             <li>
-                <NavLink to="/">
+                <NavLink to="/dashboard/mycart">
                     <button className="btn">
                  <FaShoppingCart></FaShoppingCart>
                         <div className="badge badge-secondary">+{cart?.length || 0}</div>

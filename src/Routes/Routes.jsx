@@ -52,7 +52,7 @@ import MyCart from "../Pages/Dashboard/MyCart/MyCart";
       element:<Dashboard></Dashboard>,
       children:[
         {
-          path:'/mycart',
+          path:'mycart',
           element:<MyCart></MyCart>
         }
       ]
