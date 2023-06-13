@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import banner from '../../assets/ohters/about-us.png'
 // import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 // import { register } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useContext } from 'react';
 import { AuthContext } from './../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
 
 
 
@@ -20,6 +22,33 @@ const Register = () => {
     // UseTitle('Register')
 
     // const handleRegister = event => {
+
+        
+    const auth = getAuth(app);
+    const [users,setUsers]  = useState()
+    const [error,setError] = useState('');
+
+
+
+
+
+    const { signIn, user } = useContext(AuthContext);
+    // const navigate = useNavigate();
+    const location = useLocation();
+    console.log('login', location);
+    // UseTitle('Login')
+    const from = location?.state?.from?.pathname || '/';
+
+    const googleProvider = new GoogleAuthProvider();
+
+
+
+
+
+
+
+
+
 
     const { register, handleSubmit, reset ,formState: { errors } } = useForm();
 
@@ -36,19 +65,39 @@ const Register = () => {
             console.log(loggedUser);
             updateUserProfile(data.name, data.photoURL)
             .then(() => {
-                    
-                console.log('user Profile info updated');
-                reset();
-                Swal.fire({
-                    title: 'User has been created successfully',
-                    showClass: {
-                      popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                      popup: 'animate__animated animate__fadeOutUp'
+
+                const savedUser = {name: data.name, email:data.email}
+                
+                fetch('http://localhost:5000/users',{
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(savedUser)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.insertedId){
+ 
+                        reset();
+                        Swal.fire({
+                            title: 'User has been created successfully',
+                            showClass: {
+                              popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                              popup: 'animate__animated animate__fadeOutUp'
+                            }
+                          })
+                          navigate('/')
+
+
                     }
-                  })
-                  navigate('/')
+                })
+
+
+                console.log('user Profile info updated');
+              
             })
             .catch(error => console.log(error))
 
@@ -56,6 +105,20 @@ const Register = () => {
 
 
     };
+
+    const handleGoogleSignIn = event => {
+        event.preventDefault();
+          signInWithPopup(auth,googleProvider)
+          .then(result => {
+            const loggedInUser = result.user;
+            console.log(loggedInUser);
+            setUsers(loggedInUser)
+            navigate(from,{replace:true})
+          })
+          .catch(error =>{
+            console.log('error',error.message);
+          })
+      }
 
     // event.preventDefault();
     // const form = event.target;
@@ -75,6 +138,7 @@ const Register = () => {
     //  })
     //  .catch(error => console.log(error))
     // }
+
 
 
 
@@ -225,9 +289,12 @@ const Register = () => {
                                             <input className="btn btn-warning" type="submit" value="Register" />
                                         </div>
                                     </form>
+
                                     <p> Have an account ?<Link className='text-yellow-600' to="/login">login</Link></p>
                                     {/* </form> */}
+                                    <button onClick={handleGoogleSignIn} className="btn btn-outline mt-5">Google</button>
                                 </div>
+                        
                             </div>
                         </div>
 

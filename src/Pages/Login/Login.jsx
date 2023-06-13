@@ -1,27 +1,28 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import logImg from '../../assets/ohters/OIP.jpeg'
 
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import app from '../../firebase/firebase.config';
 
 const Login = () => {
 
 
 
 
-    // const auth = getAuth(app);
-    // const [users,setUsers]  = useState()
-    // const [error,setError] = useState('');
+    const auth = getAuth(app);
+    const [users,setUsers]  = useState()
+    const [error,setError] = useState('');
 
 
 
 
 
     const { signIn, user } = useContext(AuthContext);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const location = useLocation();
     console.log('login', location);
     // UseTitle('Login')
@@ -71,17 +72,36 @@ const Login = () => {
 
     const handleGoogleSignIn = event => {
         event.preventDefault();
-        //   signInWithPopup(auth,googleProvider)
-        //   .then(result => {
-        //     const loggedInUser = result.user;
-        //     console.log(loggedInUser);
-        //     setUsers(loggedInUser)
-        //     Navigate(from,{replace:true})
-        //   })
-        //   .catch(error =>{
-        //     console.log('error',error.message);
-        //   })
-    }
+          signInWithPopup(auth,googleProvider)
+          .then(result => {
+            const loggedInUser = result.user;
+            console.log(loggedInUser);
+            setUsers(loggedInUser)
+            navigate(from,{replace:true})
+          })
+          .catch(error =>{
+            console.log('error',error.message);
+          })
+      }
+
+
+
+
+
+
+    // const handleGoogleSignIn = event => {
+    //     event.preventDefault();
+    //       signInWithPopup(auth,googleProvider)
+    //       .then(result => {
+    //         const loggedInUser = result.user;
+    //         console.log(loggedInUser);
+    //         setUsers(loggedInUser)
+    //         Navigate(from,{replace:true})
+    //       })
+    //       .catch(error =>{
+    //         console.log('error',error.message);
+    //       })
+    // }
 
     return (
         <div>
