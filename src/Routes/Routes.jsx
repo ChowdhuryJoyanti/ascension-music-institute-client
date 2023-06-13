@@ -34,7 +34,7 @@ import PrivateRoute from "./PrivateRoute";
         },
         {
           path:'/classes',
-          element:<AllClasses></AllClasses>
+          element:<PrivateRoute><AllClasses></AllClasses></PrivateRoute>
         },
         
         {
