@@ -11,6 +11,8 @@ import AllClasses from "../Pages/AllClasse/AllClasses/AllClasses";
 import Error from "../Pages/Error/Error";
 import AllInstructors from "../Pages/AllInstructors/AllInstructors/AllInstructors";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
+import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 
 
   export const router = createBrowserRouter([
@@ -42,11 +44,24 @@ import PrivateRoute from "./PrivateRoute";
           element:<PrivateRoute><AllInstructors></AllInstructors></PrivateRoute>
         }
         
-      ]
+      ],
      
     },
     {
+      path:'dashboard',
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:'/mycart',
+          element:<MyCart></MyCart>
+        }
+      ]
+     
+    },
+
+    {
       path: "*",
       element: <Error></Error>
-    }
+    },
+
   ]);
