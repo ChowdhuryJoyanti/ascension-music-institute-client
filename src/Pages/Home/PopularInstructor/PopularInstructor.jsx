@@ -8,7 +8,7 @@ const PopularInstructor = () => {
 
     useEffect(() =>{
         // fetch('popularInstractor.json')
-        fetch('http://localhost:5000/popularInstructor')
+        fetch('https://ascension-music-institute-server-chowdhuryjoyanti.vercel.app/popularInstructor')
 
         .then(res => res.json())
         .then(data => {

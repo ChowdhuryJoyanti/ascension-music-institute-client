@@ -5,10 +5,11 @@ A brief description of my project.
 ## Features
 
 - Feature 1: Home page:In home page i added a responsive navbar ,banner ,
-gallery, toys tabs, about us page ,contact page and a footer 
-- Feature 2: If click view Details button it shows the details of the tab .
-- Feature 3: IN Blog page: I added some question.
-- Feature 3: IN log in:it has a authentication page.
+popular instructor,popular class about us page  and a footer 
+- Feature 2: If click the select button on the popular page it will select the class for pay .
+- Feature 3: users dashboard, instructors dashboard , and admin dashboard added
+- Feature 4: It has payment system
+- Feature 5: IN log in:it has a authentication page.
 
 
 ## Installation
@@ -16,7 +17,7 @@ gallery, toys tabs, about us page ,contact page and a footer
 
 
 ## Live site Link:
- - my site:
+ - my site:https://ascension-music-institute.web.app
 
 ## Usage
 

@@ -4,6 +4,7 @@ import { createContext } from 'react';
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import app from '../firebase/firebase.config';
 import { useEffect } from 'react';
+import axios from 'axios';
 
 
 
@@ -46,6 +47,18 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             console.log('current user', currentUser);
+
+       if(currentUser){
+        axios.post('https://ascension-music-institute-server.vercel.app/jwt',{email : currentUser.email})
+        .then(data => {
+            console.log(data.data.token);
+            localStorage.setItem('access-token',data.data.token)
+        })
+       }
+       else{
+            localStorage.removeItem('access-token')
+       }
+
             setLoading(false)
         });
         return () => {

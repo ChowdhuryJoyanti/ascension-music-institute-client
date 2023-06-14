@@ -37,7 +37,7 @@ const SingleClass = ({ item }) => {
     if (user && user.email) {
  
       const cartItem = {classItemId:_id,instrumentName,image,price,availableSeats,email:user.email}
-      fetch('http://localhost:5000/carts',{
+      fetch('https://ascension-music-institute-server-chowdhuryjoyanti.vercel.app/carts',{
             method:'POST',
             headers: {
               'content-type': 'application/json'

@@ -22,7 +22,7 @@ const MyCart = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/carts/${item._id}`,{
+                fetch(`https://ascension-music-institute-server-chowdhuryjoyanti.vercel.app/carts/${item._id}`,{
                     method:'DELETE'
                 })
                 .then(res => res.json())

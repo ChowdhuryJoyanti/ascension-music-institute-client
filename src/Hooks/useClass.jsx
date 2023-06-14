@@ -6,7 +6,7 @@ const useClass = () => {
 
     useEffect(() =>{
         // fetch('popularClass.json')
-        fetch('http://localhost:5000/popularclass')
+        fetch('https://ascension-music-institute-server-chowdhuryjoyanti.vercel.app/popularclass')
         .then(res => res.json())
         .then(data =>  {
             setPopularClass(data)

@@ -68,7 +68,7 @@ const Register = () => {
 
                 const savedUser = {name: data.name, email:data.email}
                 
-                fetch('http://localhost:5000/users',{
+                fetch('https://ascension-music-institute-server-chowdhuryjoyanti.vercel.app/users',{
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
