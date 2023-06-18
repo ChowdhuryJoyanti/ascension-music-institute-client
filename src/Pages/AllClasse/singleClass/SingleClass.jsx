@@ -6,7 +6,7 @@ import ClassItem from '../../Home/ClassItem/ClassItem';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+// Import Swiper stylesP
 // import "swiper/css";
 // import "swiper/css/grid";
 // import "swiper/css/pagination";
@@ -37,7 +37,9 @@ const SingleClass = ({ item }) => {
     if (user && user.email) {
  
       const cartItem = {classItemId:_id,instrumentName,image,price,availableSeats,email:user.email}
-      fetch('https://ascension-music-institute-server-chowdhuryjoyanti.vercel.app/carts',{
+      // fetch('https://ascension-music-institute-server-chowdhuryjoyanti.vercel.app/carts',{
+      fetch('https://ascension-music-institute-server.vercel.app/carts',{
+      // fetch('http://localhost:5000/carts',{
             method:'POST',
             headers: {
               'content-type': 'application/json'
@@ -91,7 +93,7 @@ const SingleClass = ({ item }) => {
             <p className='text-3xl'> Price:${price}</p>
             <p className='text-3xl'>Available Seats:{availableSeats}</p>
             <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-            <button onClick={() => handleSelect(item)} className="btn btn-warning text-center ">Select</button>
+            <button onClick={() => handleSelect(item)} className="btn btn-warning text-center">Select</button>
           </div>
         </div>
       </div>

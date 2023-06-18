@@ -3,6 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, } from "react-icons/fa";
 
 import useCart from '../Hooks/useCart';
+import useAdmin from '../Hooks/useAdmin';
 
 
 const Dashboard = () => {
@@ -10,7 +11,8 @@ const Dashboard = () => {
 
 
     // todo: 
-    const isAdmin = true;
+    // const isAdmin = true;
+    const [isAdmin] = useAdmin()
 
 
     return (

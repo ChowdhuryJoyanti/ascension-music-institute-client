@@ -5,18 +5,26 @@ import { Helmet } from 'react-helmet-async';
 import Instructor from './../../Home/Instructor/Instructor';
 // import { Fade } from "react-awesome-reveal";
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../Hooks/useAxiosSecure';
+// import useAxiosSecure from '../../../Hooks/useAxiosSecure';
+// import useAxiosSecure from '../../../Hooks/UseAxiosSecure';
+
 
 const ALLUsers = () => {
+    const [axiosSecure] = useAxiosSecure();
+
 
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('https://ascension-music-institute-server-chowdhuryjoyanti.vercel.app/users')
-        return res.json();
+        const res = await axiosSecure.get('/users')
+        return res.data;
 
     })
 
 
     const handleMakeAdmin = user => {
-            fetch(`https://ascension-music-institute-server-chowdhuryjoyanti.vercel.app/users/admin/${user._id}`,{
+            // fetch(`https://ascension-music-institute-server-chowdhuryjoyanti.vercel.app/users/admin/${user._id}`,{
+            fetch(`https://ascension-music-institute-server.vercel.app/users/admin/${user._id}`,{
+            // fetch(`http://localhost:5000/users/admin/${user._id}`,{
 
             method: 'PATCH'
 
@@ -37,9 +45,33 @@ const ALLUsers = () => {
             } )
     }
 
-    // const handleDelete = user => {
+    const handleMakeInstructor = user => {
+            // fetch(`https://ascension-music-institute-server-chowdhuryjoyanti.vercel.app/users/admin/${user._id}`,{
+            fetch(`https://ascension-music-institute-server.vercel.app/users/admin/${user._id}`,{
+            // fetch(`http://localhost:5000/users/instructor/${user._id}`,{
 
-    // }
+            method: 'PATCH'
+
+            })
+            .then(res => res.json())
+            .then(data  =>{
+                console.log(data);
+                if(data.modifiedCount){
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is an  instructor Now`,
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+            } )
+    }
+
+    const handleDelete = user => {
+
+    }
     return (
         <div className='w-full'>
             <Helmet>
@@ -70,7 +102,7 @@ const ALLUsers = () => {
                                 <th>{index + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>Instructor</td>
+                                {/* <td>Instructor</td> */}
                                 <td>
                                     {
                                         user.role === 'admin' ? 'admin' : <button onClick={() => handleMakeAdmin(user)} className="btn btn-secondary btn-lg text-white">Make Admin</button>
@@ -80,9 +112,17 @@ const ALLUsers = () => {
                                 {/* <td>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost btn-lg bg-red-400 text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td> */}
+                                {/* <td>
+                                    <button  onClick={() => handleMakeInstructor(item)}  className="btn btn-primary btn-lg  text-white">Make Instructor</button>
+                                </td> */}
+
+
                                 <td>
-                                    <button className="btn btn-primary btn-lg  text-white">Make Instructor</button>
+                                    {
+                                        user.role === 'instructor' ? 'instructor' : <button onClick={() => handleMakeInstructor(user)} className="btn btn-primary btn-lg text-white">Make Instructor</button>
+                                    }
                                 </td>
+
                                 {/* <td>
                                     <button className="btn btn-secondary btn-lg text-white">Make Admin</button>
                                 </td> */}
