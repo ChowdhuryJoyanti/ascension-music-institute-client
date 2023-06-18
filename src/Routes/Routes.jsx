@@ -40,7 +40,7 @@ import ManageClass from "../Pages/Dashboard/ManageClass/ManageClass";
         },
         {
           path:'/classes',
-          element:<PrivateRoute><AllClasses></AllClasses></PrivateRoute>
+          element:<AllClasses></AllClasses>
         },
         
         {
@@ -64,13 +64,13 @@ import ManageClass from "../Pages/Dashboard/ManageClass/ManageClass";
           element:<ALLUsers></ALLUsers>
         },{
           path:'addItem',
-          // element:<AdminRoute><AddItem></AddItem></AdminRoute>
-          element:<AddItem></AddItem>
+          element:<AdminRoute><AddItem></AddItem></AdminRoute>
+          // element:<AddItem></AddItem>
         },
         {
           path:'manageClass',
-          // element:<AdminRoute><ManageClass></ManageClass></AdminRoute>,
-          element:<ManageClass></ManageClass>,
+          element:<AdminRoute><ManageClass></ManageClass></AdminRoute>,
+          // element:<ManageClass></ManageClass>,
 
         }
       ]

@@ -164,10 +164,10 @@ const ManageClass = () => {
         {
           Boookings.map(instructor => <tr key={instructor._id}>
             <td data-label="Class Image"><img className='w-[70px] h-[70px] rounded-lg border-2 border-purple-400 shadow-lg shadow-purple-200' src={instructor.image} alt="" /></td>
-            <td data-label="Class name">{instructor.name}</td>
-            <td data-label="Instructor name">{instructor.instructor}</td>
-            <td className='text-[.8em]' data-label="Instructor email">{instructor.instructor_email}</td>
-            <td data-label="Available seats">{instructor.available_seats}</td>
+            <td data-label="Class name">{instructor.InstrumentName}</td>
+            <td data-label="Instructor name">{instructor.instructorName}</td>
+            <td className='text-[.8em]' data-label="Instructor email">{instructor.email}</td>
+            <td data-label="Available seats">{instructor.availableSeats}</td>
             <td data-label="Price">{instructor.price}$</td>
             <td data-label="Overall Status">
               {
