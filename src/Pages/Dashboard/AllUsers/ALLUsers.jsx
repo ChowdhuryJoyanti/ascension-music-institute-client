@@ -47,7 +47,7 @@ const ALLUsers = () => {
 
     const handleMakeInstructor = user => {
             // fetch(`https://ascension-music-institute-server-chowdhuryjoyanti.vercel.app/users/admin/${user._id}`,{
-            fetch(`https://ascension-music-institute-server.vercel.app/users/admin/${user._id}`,{
+            fetch(`https://ascension-music-institute-server.vercel.app/users/instructor/${user._id}`,{
             // fetch(`http://localhost:5000/users/instructor/${user._id}`,{
 
             method: 'PATCH'
